@@ -86,3 +86,11 @@ app.put('/api/v1/messages/:id', (req, res) => {
     message: `UPDATE a message with ID ${id}`,
   });
 });
+
+app.delete('/api/v1/messages/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+    res.json({
+      status: "success",
+      message: `DELETED a message with ID ${id}`,
+  });
+});
