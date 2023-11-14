@@ -78,3 +78,11 @@ app.post('/api/v1/messages', (req, res) => {
     });
   }
 });
+
+app.put('/api/v1/messages/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  res.json({
+    status: "success",
+    message: `UPDATE a message with ID ${id}`,
+  });
+});
