@@ -63,3 +63,18 @@ app.get('/api/v1/messages/:id', (req, res) => {
     });
 });
 
+app.post('/api/v1/messages', (req, res) => {
+  const user = req.body.message.user;
+  
+  if (user) {
+    res.json({
+      status: "success",
+      message: `POST a new message for user ${user}`,
+    });
+  } else {
+    res.status(400).json({
+      status: "error",
+      message: "Post failed",
+    });
+  }
+});
